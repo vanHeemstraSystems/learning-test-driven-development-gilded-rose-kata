@@ -1,5 +1,7 @@
 # 300 - Learning Our Subject
 
-See [References](../REFERENCES.md)
+## 100 - Gilded Rose Kata in Python
 
-To Do
+See [README.md](./100/README.md)
+
+To Do: More Languages, see [References](../REFERENCES.md)
