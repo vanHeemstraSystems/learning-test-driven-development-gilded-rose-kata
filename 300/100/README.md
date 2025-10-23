@@ -8,6 +8,8 @@ See [README.md](./100/README.md)
 
 Suggestion: create a python virtual environment for this project. See the [documentation](https://docs.python.org/3/library/venv.html).
 
+**STRONGLY SUGGESTED**: Watch [Fun Refactoring! - Gilded Rose Kata, Hands-on with Approval Testing](https://www.youtube.com/watch?v=OdnV8hc9L7I)
+
 ## 200 - Run the unit tests from the Command-Line
 
 See [README.md](./200/README.md)
