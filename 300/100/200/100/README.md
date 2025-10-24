@@ -1,4 +1,6 @@
-# 100 - Fixing bug "foobar instead of fixme"
+# 100 - Fixing bug "foo instead of fixme"
+
+# 1. Prepare for bug fixing
 
 When we first ran the unit test, we were alerted about below bug.
 
@@ -64,6 +66,71 @@ Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
+## Method 1: Local branch creation for bug fixing (Not Recommended)
+
+### Create a new branch locally
+
+```bash
+# 1. Ensure you're on the main branch and it's up to date
+git checkout main
+git pull origin main
+
+# 2. Create and switch to a new branch for the bug fix
+git checkout -b bug/2-bug-foo-instead-of-fixme
+
+# 3. Verify you're on the new branch
+git branch
+# You should see: * bug/2-bug-foo-instead-of-fixme
+
+# 4. Check the status
+git status
+# Should show: On branch bug/2-bug-foo-instead-of-fixme
+```
+
+### Alternative: Create branch first, then switch
+
+```bash
+# 1. Create the branch without switching to it
+git branch bug/2-bug-foo-instead-of-fixme
+
+# 2. Switch to the new branch
+git checkout bug/2-bug-foo-instead-of-fixme
+
+# 3. Verify you're on the correct branch
+git status
+```
+
+### Push the new branch to remote
+
+```bash
+# 1. Push the new branch to the remote repository
+git push -u origin bug/2-bug-foo-instead-of-fixme
+
+# 2. Verify the branch was pushed
+git branch -vv
+# Should show: * bug/2-bug-foo-instead-of-fixme 1234567 [origin/bug/2-bug-foo-instead-of-fixme] Latest commit message
+```
+
+### Verify your setup
+
+```bash
+# Check current branch
+git branch
+
+# Check remote tracking
+git branch -vv
+
+# Check status
+git status
+
+# You should see:
+# On branch bug/2-bug-foo-instead-of-fixme
+# Your branch is up to date with 'origin/bug/2-bug-foo-instead-of-fixme'.
+# nothing to commit, working tree clean
+```
+
+## Method 2: GitHub Issue Creation (Recommended)
+
 On GitHub create a new issue: ```Bug: foo instead of fixme``` of type **Bug**, with the following description.
 
 ```
@@ -116,6 +183,8 @@ git checkout bug/2-bug-foo-instead-of-fixme
 
 See [README.md](./100/README.md)
 
+# If the branch doesn't exist locally, create it and track the remote
+git checkout -b bug/2-bug-foo-instead-of-fixme origin/bug/2-bug-foo-instead-of-fixme
 ```
 # 4. When done, commit and push:
 git add .

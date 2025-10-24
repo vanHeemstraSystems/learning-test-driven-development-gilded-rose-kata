@@ -2,6 +2,8 @@
 
 Based on [Gilded Rose Kata in Python on GitHub](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/python).
 
+**Recommended**: Watch [Python refactoring exercise "GildedRose"](https://www.youtube.com/watch?v=IpauepiaalY).
+
 ## 100 - Instructions
 
 See [README.md](./100/README.md)
