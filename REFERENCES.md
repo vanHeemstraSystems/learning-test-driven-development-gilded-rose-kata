@@ -5,3 +5,4 @@
 - [Fun Refactoring! - Gilded Rose Kata, Hands-on with Approval Testing](https://www.youtube.com/watch?v=OdnV8hc9L7I)
 - [Sparkbox Code Challenge: Gilded Rose](https://sparkbox.com/foundry/sparkbox_code_challenge_gilded_rose)
 - [The Senior Engineer’s Guide: The Gilded Rose Code Kata](https://www.johngerace.com/gilded-rose-kata/)
+- [Refactoring Gilded Rose](http://sourcery.ai/blog/refactoring-gilded-rose/)
