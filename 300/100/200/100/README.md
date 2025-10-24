@@ -233,8 +233,7 @@ After pushing your branch, you can create a Pull Request (PR) in several ways. H
 - Title: "Fix: Change item name from 'foo' to 'fixme'"
 - Description: Explain what the bug was and how you fixed it
 - Reviewers: Add any team members who should review
-
-5.Click "Create pull request"
+5. Click "Create pull request"
 
 ## Method 2: GitHub CLI (if you have it installed)
 
