@@ -85,4 +85,46 @@ python -m unittest tests.test_gilded_rose.GildedRoseTest.test_foo -v
 This will show you exactly which test is failing and what the expected vs actual values are.
 
 
-TO DO: FIX IT
+## Fixing the Issue: 'foo found but fixme expected'
+
+In fact the error is not in de application (here: ```gilded_rose.py```), but in the unit test itself (here: ```test_gilded_rose.py```) in the test ```test_foo```:
+
+```
+    def test_foo(self):
+        items = [Item("foo", 0, 0)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual("fixme", items[0].name)
+```
+
+It can be easily fixed as follows:
+
+```
+    def test_foo(self):
+        items = [Item("foo", 0, 0)]
+        gilded_rose = GildedRose(items)
+        gilded_rose.update_quality()
+        self.assertEqual("foo", items[0].name) # changed "fixme" to "foo"
+```
+
+When running the unit tests again, the error has gone:
+
+``` python
+python -m unittest
+```
+
+The outcome is:
+
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+```
+
+The test was **intentional** faulty, so we would have an idea of the unit tests running well - it’s just showing you how the test structure works.
+
+Next step is to create additional unit tests that cover the application's logic to fullfill all requirements set at the start. This we will pick up in their own section.
+
+Now we can commit the change back to the branch and start a pull request for merging with the main branch.
