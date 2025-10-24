@@ -46,6 +46,22 @@ Commit your current changes first (if you want to keep them):
 ```
 git add .
 git commit -m "Some description of your last changes"
+git push
+```
+
+Check:
+
+```
+git status
+```
+
+You'll see:
+
+```
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
 ```
 
 So lets create a new branch for the bug.
