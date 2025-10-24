@@ -1,12 +1,6 @@
-# 200 - Run the unit tests from the Command-Line
+# 100 - Fixing bug "foobar instead of fixme"
 
-Your command line should start with ```(venv)```, indicating that you are working inside your virtual environment.
-
-``` python
-python -m unittest
-```
-
-The first time this will be the outcome:
+When we first ran the unit test, we were alerted about below bug.
 
 ```
 F
@@ -35,16 +29,34 @@ This is a test-driven development kata where:
 - The code is supposed to be implemented to make the test pass
 - The current code returns "foo" instead of "fixme"
 
-## Next Steps:
-This is the intended starting point of the kata! You should now:
-1. Look at the failing test to understand what it expects
-2. Modify the gilded_rose.py code to make the test pass
-3. Continue with the refactoring exercises
+Here is how we are going to fix it using GitFlow instructions.
 
-Below we will go through each refactoring/bug fixing exercise.
+**NOTE**: You can create a new Git branch while in a virtual environment. The virtual environment only affects your Python package installations and doesn't interfere with Git operations.
 
-## 100 - Fixing bug "foobar instead of fixme"
+```
+git status
+```
 
-See [README.md](./100/README.md)
+You are currently in the main branch.
+
+### Best Practices for Bug Fix Branches:
+
+Commit your current changes first (if you want to keep them):
+
+```
+git add .
+git commit -m "Some description of your last changes"
+```
+
+So lets create a new branch for the bug.
+
+```
+# 1. Create and switch to a new branch
+git checkout -b bug/foobar-instead-of-fixme
+
+# 2. Or alternatively, create the branch first then switch
+git branch bug/foobar-instead-of-fixme
+git checkout bug/foobar-instead-of-fixme
+```
 
 MORE
