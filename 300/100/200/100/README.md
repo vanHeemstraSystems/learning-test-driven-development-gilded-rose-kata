@@ -66,7 +66,7 @@ Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
-## Method 1: Local branch creation for bug fixing
+## Method 1: Local branch creation for bug fixing (Not Recommended)
 
 ### Create a new branch locally
 
