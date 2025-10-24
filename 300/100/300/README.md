@@ -1,5 +1,7 @@
 # 300 - Run the TextTest fixture from the Command-Line
 
+Your command line should start with ```(venv)```, indicating that you are working inside your virtual environment.
+
 For e.g. 10 days:
 
 ``` python

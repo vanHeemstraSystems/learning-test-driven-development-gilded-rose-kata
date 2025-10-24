@@ -1,6 +1,10 @@
 # 500 - Run the ApprovalTests.Python test
 
-This test uses the framework [ApprovalTests.Python](https://github.com/approvals/ApprovalTests.Python). You will need to install Run it like this:
+Your command line should start with ```(venv)```, indicating that you are working inside your virtual environment.
+
+This test uses the framework [ApprovalTests.Python](https://github.com/approvals/ApprovalTests.Python). You will need to install it.
+
+Run it like this:
 
 ```python
 python tests/test_gilded_rose_approvals.py
