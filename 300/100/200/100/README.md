@@ -1,4 +1,4 @@
-# 100 - Fixing bug "foobar instead of fixme"
+# 100 - Fixing bug "foo instead of fixme"
 
 When we first ran the unit test, we were alerted about below bug.
 
@@ -89,31 +89,59 @@ In the new issue on GitHub click **Create**.
 
 Choose: ```Create a branch for this issue```.
 
-Accept the proposed name of the new branch (here: ```1-bug-foo-instead-of-fixme```) , choose **Main** as branch source (optionally choose ```Checkout locally```, although we will work from our remote repository) and choose **Create Branch**.
+Modify the proposed name of the new branch (here: ```2-bug-foo-instead-of-fixme```) by prefixing it with in this case ```bug/``` (so the branch name becomes ```bug/2-bug-foo-instead-of-fixme```), choose **Main** as branch source (optionally choose ```Checkout locally```, although we will work from our remote repository) and choose **Create Branch**.
 
+# 2. Switch to your bug specific branch
 
+## Option A: If you created the branch locally
+```bash
+# Check current branch
+git branch
 
+# Switch to your bug branch (if you're not already on it)
+git checkout bug/2-bug-foo-instead-of-fixme
 
-WE ARE HERE 
-
-
-
-So lets create a new branch for the bug.
-
-```
-# 1. Create and switch to a new branch
-git checkout -b bug/foo-instead-of-fixme
-
-# 2. Or alternatively, create the branch first then switch
-git branch bug/foo-instead-of-fixme
-git checkout bug/foo-instead-of-fixme
+# Verify you're on the correct branch
+git status
 ```
 
-You should see something like:
+## Option B: If you created the branch on GitHub (remote)
+```bash
+# Fetch the latest changes from remote
+git fetch origin
 
+# List all available branches (local and remote)
+git branch -a
+
+# Switch to the remote branch (this creates a local tracking branch)
+git checkout -b bug/2-bug-foo-instead-of-fixme origin/bug/2-bug-foo-instead-of-fixme
+
+# Verify you're on the correct branch
+git status
 ```
-branch 'bug/2-bug-foo-instead-of-fixme' set up to track 'origin/bug/2-bug-foo-instead-of-fixme'.
-Switched to a new branch 'bug/2-bug-foo-instead-of-fixme'
+
+## Option C: If the branch already exists remotely
+```bash
+# Fetch all remote branches
+git fetch origin
+
+# Switch to the remote branch
+git checkout bug/2-bug-foo-instead-of-fixme
+
+# If the branch doesn't exist locally, create it and track the remote
+git checkout -b bug/2-bug-foo-instead-of-fixme origin/bug/2-bug-foo-instead-of-fixme
+```
+
+## Verify your setup
+```bash
+# Check current branch
+git branch
+
+# Check remote tracking
+git branch -vv
+
+# You should see something like:
+# * bug/2-bug-foo-instead-of-fixme 1234567 [origin/bug/2-bug-foo-instead-of-fixme] Latest commit message
 ```
 
 # 3. Work on your fix while in the virtual environment

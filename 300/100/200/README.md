@@ -43,7 +43,7 @@ This is the intended starting point of the kata! You should now:
 
 Below we will go through each refactoring/bug fixing exercise.
 
-## 100 - Fixing bug "foobar instead of fixme"
+## 100 - Fixing bug "foo instead of fixme"
 
 See [README.md](./100/README.md)
 
