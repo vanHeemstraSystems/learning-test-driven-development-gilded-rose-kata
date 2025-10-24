@@ -123,4 +123,137 @@ git commit -m "Fix: Change item name from 'foo' to 'fixme'"
 git push origin bug/2-bug-foo-instead-of-fixme
 ```
 
-MORE
+## 6. Create a Pull Request on GitHub
+
+### Step 1: Push your changes to the remote branch
+
+```bash
+# Make sure you're on your bug fix branch
+git checkout bug/2-bug-foo-instead-of-fixme
+
+# Add your changes
+git add .
+
+# Commit your changes
+git commit -m "Fix: Change test assertion from 'fixme' to 'foo' in test_foo"
+
+# Push to remote branch
+git push origin bug/2-bug-foo-instead-of-fixme
+```
+
+### Step 2: Create Pull Request via GitHub Web Interface
+
+1. **Go to your repository on GitHub**
+2. **You'll see a yellow banner** saying "bug/2-bug-foo-instead-of-fixme had recent pushes" with a **"Compare & pull request"** button
+3. **Click "Compare & pull request"**
+
+### Step 3: Fill out the Pull Request form
+
+**Title:**
+```
+Fix: Change test assertion from 'fixme' to 'foo' in test_foo
+```
+
+**Description:**
+```markdown
+## Bug Fix
+- Fixed the failing test_foo method in test_gilded_rose.py
+- Changed assertion from expecting "fixme" to expecting "foo"
+- Test now passes successfully
+
+## Changes Made
+- Modified test_gilded_rose.py line 12
+- Changed `self.assertEqual("fixme", items[0].name)` to `self.assertEqual("foo", items[0].name)`
+
+## Testing
+- [x] Ran `python -m unittest` - all tests pass
+- [x] Verified the fix resolves the failing test
+
+## Notes
+This was an intentional test error to demonstrate the testing workflow. The test now correctly validates the expected behavior.
+```
+
+4. **Click "Create pull request"**
+
+### Step 4: Wait for Review and Merge
+
+1. **Wait for review** from team members (if any)
+2. **Address any feedback** by pushing more commits to the same branch
+3. **Once approved**, merge the PR using one of these methods:
+   - **Merge commit** (recommended for feature branches)
+   - **Squash and merge** (combines all commits into one)
+   - **Rebase and merge** (replays commits on top of main)
+
+## 7. Clean Up After Merge
+
+### Step 1: Switch back to main branch
+
+```bash
+# Switch to main branch
+git checkout main
+
+# Pull the latest changes (including your merged PR)
+git pull origin main
+```
+
+### Step 2: Delete the local branch
+
+```bash
+# Delete the local branch
+git branch -d bug/2-bug-foo-instead-of-fixme
+
+# If the branch hasn't been merged, use -D to force delete
+# git branch -D bug/2-bug-foo-instead-of-fixme
+```
+
+### Step 3: Delete the remote branch
+
+```bash
+# Delete the remote branch
+git push origin --delete bug/2-bug-foo-instead-of-fixme
+```
+
+### Step 4: Verify cleanup
+
+```bash
+# List local branches
+git branch
+
+# List remote branches
+git branch -r
+
+# Check status
+git status
+```
+
+## 8. Alternative: GitHub Auto-Cleanup
+
+If you enabled **"Delete head branch"** when creating the PR:
+1. The remote branch will be **automatically deleted** after merging
+2. You only need to delete the **local branch**:
+
+```bash
+# Switch to main and pull latest
+git checkout main
+git pull origin main
+
+# Delete local branch
+git branch -d bug/2-bug-foo-instead-of-fixme
+```
+
+## 9. Verify Everything is Clean
+
+```bash
+# Check you're on main branch
+git branch
+
+# Verify no uncommitted changes
+git status
+
+# Should show:
+# On branch main
+# Your branch is up to date with 'origin/main'.
+# nothing to commit, working tree clean
+```
+
+Your bug fix workflow is now complete! 🎉
