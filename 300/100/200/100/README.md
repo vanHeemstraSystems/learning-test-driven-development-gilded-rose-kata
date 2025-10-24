@@ -96,16 +96,28 @@ Lets use the new branch for the bug.
 ```
 # 1. Run the following commands in your local clone.
 git fetch origin
+```
+
+You should see something like:
+
+```
+From https://github.com/vanHeemstraSystems/learning-test-driven-development-gilded-rose-kata
+ * [new branch]      bug/2-bug-foo-instead-of-fixme -> origin/bug/2-bug-foo-instead-of-fixme
+```
+
+```
+# 2. Checkout the new branch in your local clone.
 git checkout bug/2-bug-foo-instead-of-fixme
 ```
 
-# 2. Work on your fix while in the virtual environment
+```
+# 3. Work on your fix while in the virtual environment
+```
 
 See [README.md](./100/README.md)
 
-# 3. When done, commit and push:
-
 ```
+# 4. When done, commit and push:
 git add .
 git commit -m "Fix: Change item name from 'foo' to 'fixme'"
 git push origin bug/2-bug-foo-instead-of-fixme
