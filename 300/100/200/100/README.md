@@ -64,6 +64,40 @@ Your branch is up to date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
+On GitHub create a new issue: ```Bug: foo instead of fixme``` of type **Bug**, with the following description.
+
+```
+F
+======================================================================
+FAIL: test_foo (tests.test_gilded_rose.GildedRoseTest.test_foo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/opt/code/learning-test-driven-development-gilded-rose-kata/python/tests/test_gilded_rose.py", line 12, in test_foo
+    self.assertEqual("fixme", items[0].name)
+AssertionError: 'fixme' != 'foo'
+- fixme
++ foo
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
+```
+
+In the new issue on GitHub click **Create**.
+
+Choose: ```Create a branch for this issue```.
+
+Accept the proposed name of the new branch (here: ```1-bug-foo-instead-of-fixme```) , choose **Main** as branch source (optionally choose ```Checkout locally```, although we will work from our remote repository) and choose **Create Branch**.
+
+
+
+
+WE ARE HERE 
+
+
+
 So lets create a new branch for the bug.
 
 ```
