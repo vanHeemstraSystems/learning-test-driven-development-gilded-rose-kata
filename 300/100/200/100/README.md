@@ -68,11 +68,23 @@ So lets create a new branch for the bug.
 
 ```
 # 1. Create and switch to a new branch
-git checkout -b bug/foobar-instead-of-fixme
+git checkout -b bug/foo-instead-of-fixme
 
 # 2. Or alternatively, create the branch first then switch
-git branch bug/foobar-instead-of-fixme
-git checkout bug/foobar-instead-of-fixme
+git branch bug/foo-instead-of-fixme
+git checkout bug/foo-instead-of-fixme
+```
+
+# 3. Work on your fix while in the virtual environment
+
+See [README.md](./100/README.md)
+
+# 4. When done, commit and push:
+
+```
+git add .
+git commit -m "Fix: Change item name from 'foo' to 'fixme'"
+git push origin bug/foo-instead-of-fixme
 ```
 
 MORE
