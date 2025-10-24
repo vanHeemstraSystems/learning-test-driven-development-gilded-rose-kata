@@ -156,257 +156,173 @@ In the new issue on GitHub click **Create**.
 
 Choose: ```Create a branch for this issue```.
 
-Modify the proposed name of the new branch (here: ```2-bug-foo-instead-of-fixme```) by prefixing it with in this case ```bug/``` (so the branch name becomes ```bug/2-bug-foo-instead-of-fixme```), choose **Main** as branch source (optionally choose ```Checkout locally```, although we will work from our remote repository) and choose **Create Branch**.
+Modify the proposed name of the new branch (here: ```2-bug-foo-instead-of-fixme```) by adding ```bug/``` in front of it (so now the branch name is ```bug/2-bug-foo-instead-of-fixme```), choose **Main** as branch source (optionally choose ```Checkout locally```, although we will work from our remote repository) and choose **Create Branch**.
 
-# 2. Switch to your bug specific branch
+Lets use the new branch for the bug.
 
-## Option A: If you created the branch locally
-```bash
-# Check current branch
-git branch
-
-# Switch to your bug branch (if you're not already on it)
-git checkout bug/2-bug-foo-instead-of-fixme
-
-# Verify you're on the correct branch
-git status
+```
+# 1. Run the following commands in your local clone.
+git fetch origin
 ```
 
-## Option B: If you created the branch on GitHub (remote)
-```bash
-# Fetch the latest changes from remote
-git fetch origin
+You should see something like:
 
-# List all available branches (local and remote)
-git branch -a
-
-# Switch to the remote branch (this creates a local tracking branch)
-git checkout -b bug/2-bug-foo-instead-of-fixme origin/bug/2-bug-foo-instead-of-fixme
-
-# Verify you're on the correct branch
-git status
+```
+From https://github.com/vanHeemstraSystems/learning-test-driven-development-gilded-rose-kata
+ * [new branch]      bug/2-bug-foo-instead-of-fixme -> origin/bug/2-bug-foo-instead-of-fixme
 ```
 
-## Option C: If the branch already exists remotely
-```bash
-# Fetch all remote branches
-git fetch origin
-
-# Switch to the remote branch
+```
+# 2. Checkout the new branch in your local clone.
 git checkout bug/2-bug-foo-instead-of-fixme
+```
+
+```
+# 3. Work on your fix while in the virtual environment
+```
+
+See [README.md](./100/README.md)
 
 # If the branch doesn't exist locally, create it and track the remote
 git checkout -b bug/2-bug-foo-instead-of-fixme origin/bug/2-bug-foo-instead-of-fixme
 ```
-
-## Verify your setup
-```bash
-# Check current branch
-git branch
-
-# Check remote tracking
-git branch -vv
-
-# You should see something like:
-# * bug/2-bug-foo-instead-of-fixme 1234567 [origin/bug/2-bug-foo-instead-of-fixme] Latest commit message
-```
-
-# 3. Work on your fix while in the virtual environment
-
-See [README.md](./100/README.md)
-
 # 4. When done, commit and push:
-
-```
 git add .
 git commit -m "Fix: Change item name from 'foo' to 'fixme'"
 git push origin bug/2-bug-foo-instead-of-fixme
 ```
 
-After pushing your branch, you can create a Pull Request (PR) in several ways. Here are the most common methods:
+## 6. Create a Pull Request on GitHub
 
-## Method 1: GitHub Web Interface (Recommended)
-1. Go to your repository on GitHub
-2. You'll see a yellow banner saying "bug/2-bug-foo-instead-of-fixme had recent pushes" with a "Compare & pull request" button
-3. Click "Compare & pull request"
-4. Fill out the PR form:
-- Title: "Fix: Change item name from 'foo' to 'fixme'"
-- Description: Explain what the bug was and how you fixed it
-- Reviewers: Add any team members who should review
-5. Click "Create pull request"
-
-## Method 2: GitHub CLI (if you have it installed)
-
-### Installing GitHub CLI
-
-#### macOS (using Homebrew)
-```bash
-# Install Homebrew if you don't have it
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# Install GitHub CLI
-brew install gh
-```
-
-#### macOS (using MacPorts)
-```bash
-sudo port install gh
-```
-
-#### Windows (using Chocolatey)
-```powershell
-# Install Chocolatey if you don't have it
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-
-# Install GitHub CLI
-choco install gh
-```
-
-#### Windows (using Scoop)
-```powershell
-# Install Scoop if you don't have it
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh | iex
-
-# Install GitHub CLI
-scoop install gh
-```
-
-#### Linux (Ubuntu/Debian)
-```bash
-# Add GitHub CLI repository
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-
-# Update package list and install
-sudo apt update
-sudo apt install gh
-```
-
-#### Linux (Fedora/RHEL/CentOS)
-```bash
-# Add GitHub CLI repository
-sudo dnf install 'https://github.com/cli/cli/releases/download/v2.40.1/gh_2.40.1_linux_amd64.rpm'
-```
-
-#### Manual Installation (All Platforms)
-```bash
-# Download the latest release from GitHub
-# Visit: https://github.com/cli/cli/releases/latest
-# Download the appropriate package for your OS and architecture
-```
-
-### Authenticating with GitHub CLI
+### Step 1: Push your changes to the remote branch
 
 ```bash
-# Authenticate with GitHub (opens browser for login)
-gh auth login
+# Make sure you're on your bug fix branch
+git checkout bug/2-bug-foo-instead-of-fixme
 
-# Choose your preferred protocol (HTTPS recommended)
-# Choose your preferred authentication method (Login with a web browser)
-# Follow the browser prompts to complete authentication
+# Add your changes
+git add .
+
+# Commit your changes
+git commit -m "Fix: Change test assertion from 'fixme' to 'foo' in test_foo"
+
+# Push to remote branch
+git push origin bug/2-bug-foo-instead-of-fixme
 ```
 
-### Creating a Pull Request with GitHub CLI
+### Step 2: Create Pull Request via GitHub Web Interface
 
-```bash
-# 1. Navigate to your repository root
-cd /path/to/your/repository
+1. **Go to your repository on GitHub**
+2. **You'll see a yellow banner** saying "bug/2-bug-foo-instead-of-fixme had recent pushes" with a **"Compare & pull request"** button
+3. **Click "Compare & pull request"**
 
-# 2. Create a Pull Request from your current branch
-gh pr create --title "Fix: Change item name from 'foo' to 'fixme'" --body "## Bug Fix
-- Fixed the test failure where item name was 'foo' instead of expected 'fixme'
-- Updated gilded_rose.py to return correct item name
-- All tests now pass
+### Step 3: Fill out the Pull Request form
 
-## Changes Made
-- Modified the item creation logic in gilded_rose.py
-- Ensured test_gilded_rose.py test_foo() passes
-
-## Testing
-- [x] Ran \`python -m unittest\` - all tests pass
-- [x] Verified the fix resolves the failing test"
-
-# 3. Or create a PR interactively (will prompt for title and body)
-gh pr create
-
-# 4. View your PR in the browser
-gh pr view --web
-
-# 5. Check PR status
-gh pr status
+**Title:**
+```
+Fix: Change test assertion from 'fixme' to 'foo' in test_foo
 ```
 
-### Additional GitHub CLI Commands
-
-```bash
-# List all PRs
-gh pr list
-
-# View a specific PR
-gh pr view [PR_NUMBER]
-
-# Edit a PR
-gh pr edit [PR_NUMBER]
-
-# Merge a PR
-gh pr merge [PR_NUMBER]
-
-# Close a PR
-gh pr close [PR_NUMBER]
-
-# Check out a PR locally
-gh pr checkout [PR_NUMBER]
-```
-
-## Method 3: Direct URL
-You can also create a PR by going directly to:
-
-```
-https://github.com/YOUR_USERNAME/YOUR_REPO/compare/bug/2-bug-foo-instead-of-fixme
-```
-
-## What to Include in Your PR:
-
-### Title:
-```
-Fix: Change item name from 'foo' to 'fixme'
-```
-
-### Description:
-```
+**Description:**
+```markdown
 ## Bug Fix
-- Fixed the test failure where item name was 'foo' instead of expected 'fixme'
-- Updated gilded_rose.py to return correct item name
-- All tests now pass
+- Fixed the failing test_foo method in test_gilded_rose.py
+- Changed assertion from expecting "fixme" to expecting "foo"
+- Test now passes successfully
 
 ## Changes Made
-- Modified the item creation logic in gilded_rose.py
-- Ensured test_gilded_rose.py test_foo() passes
+- Modified test_gilded_rose.py line 12
+- Changed `self.assertEqual("fixme", items[0].name)` to `self.assertEqual("foo", items[0].name)`
 
 ## Testing
 - [x] Ran `python -m unittest` - all tests pass
 - [x] Verified the fix resolves the failing test
+
+## Notes
+This was an intentional test error to demonstrate the testing workflow. The test now correctly validates the expected behavior.
 ```
 
-## After Creating the PR:
+4. **Click "Create pull request"**
 
-1. Wait for review from team members
-2. Address any feedback by pushing more commits to the same branch
-3. Once approved, merge the PR
-4. Delete the branch after merging (GitHub usually offers this option)
+### Step 4: Wait for Review and Merge
 
-The web interface method is the most user-friendly and gives you a nice visual interface to set up your PR properly!
+1. **Wait for review** from team members (if any)
+2. **Address any feedback** by pushing more commits to the same branch
+3. **Once approved**, merge the PR using one of these methods:
+   - **Merge commit** (recommended for feature branches)
+   - **Squash and merge** (combines all commits into one)
+   - **Rebase and merge** (replays commits on top of main)
 
-# 5. Switch back to the main branch
+## 7. Clean Up After Merge
+
+### Step 1: Switch back to main branch
 
 ```bash
-# Switch back to the main branch
+# Switch to main branch
 git checkout main
 
-# Verify you're on the main branch
-git branch
-
-# Pull any latest changes from remote
+# Pull the latest changes (including your merged PR)
 git pull origin main
 ```
+
+### Step 2: Delete the local branch
+
+```bash
+# Delete the local branch
+git branch -d bug/2-bug-foo-instead-of-fixme
+
+# If the branch hasn't been merged, use -D to force delete
+# git branch -D bug/2-bug-foo-instead-of-fixme
+```
+
+### Step 3: Delete the remote branch
+
+```bash
+# Delete the remote branch
+git push origin --delete bug/2-bug-foo-instead-of-fixme
+```
+
+### Step 4: Verify cleanup
+
+```bash
+# List local branches
+git branch
+
+# List remote branches
+git branch -r
+
+# Check status
+git status
+```
+
+## 8. Alternative: GitHub Auto-Cleanup
+
+If you enabled **"Delete head branch"** when creating the PR:
+1. The remote branch will be **automatically deleted** after merging
+2. You only need to delete the **local branch**:
+
+```bash
+# Switch to main and pull latest
+git checkout main
+git pull origin main
+
+# Delete local branch
+git branch -d bug/2-bug-foo-instead-of-fixme
+```
+
+## 9. Verify Everything is Clean
+
+```bash
+# Check you're on main branch
+git branch
+
+# Verify no uncommitted changes
+git status
+
+# Should show:
+# On branch main
+# Your branch is up to date with 'origin/main'.
+# nothing to commit, working tree clean
+```
+
+Your bug fix workflow is now complete! 🎉
