@@ -6,3 +6,4 @@
 - [Sparkbox Code Challenge: Gilded Rose](https://sparkbox.com/foundry/sparkbox_code_challenge_gilded_rose)
 - [The Senior Engineer’s Guide: The Gilded Rose Code Kata](https://www.johngerace.com/gilded-rose-kata/)
 - [Refactoring Gilded Rose](http://sourcery.ai/blog/refactoring-gilded-rose/)
+- [Refactoring with confidence - because of tests! (Gilded Rose Kata)](https://www.youtube.com/watch?v=wGQPqPorLQ4)
