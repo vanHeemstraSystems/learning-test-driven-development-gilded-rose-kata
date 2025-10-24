@@ -16,6 +16,25 @@ This is a test-driven development kata where:
 - The code is supposed to be implemented to make the test pass
 - The current code returns "foo" instead of "fixme"
 
+```
+F
+======================================================================
+FAIL: test_foo (tests.test_gilded_rose.GildedRoseTest.test_foo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/usr/local/opt/code/learning-test-driven-development-gilded-rose-kata/python/tests/test_gilded_rose.py", line 12, in test_foo
+    self.assertEqual("fixme", items[0].name)
+AssertionError: 'fixme' != 'foo'
+- fixme
++ foo
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (failures=1)
+```
+
 ## Next Steps:
 This is the intended starting point of the kata! You should now:
 1. Look at the failing test to understand what it expects
