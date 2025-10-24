@@ -89,36 +89,26 @@ In the new issue on GitHub click **Create**.
 
 Choose: ```Create a branch for this issue```.
 
-Accept the proposed name of the new branch (here: ```1-bug-foo-instead-of-fixme```) , choose **Main** as branch source (optionally choose ```Checkout locally```, although we will work from our remote repository) and choose **Create Branch**.
+Modify the proposed name of the new branch (here: ```2-bug-foo-instead-of-fixme```) by adding ```bug/``` in front of it (so now the branch name is ```bug/2-bug-foo-instead-of-fixme```), choose **Main** as branch source (optionally choose ```Checkout locally```, although we will work from our remote repository) and choose **Create Branch**.
 
-
-
-
-WE ARE HERE 
-
-
-
-So lets create a new branch for the bug.
+Lets use the new branch for the bug.
 
 ```
-# 1. Create and switch to a new branch
-git checkout -b bug/foo-instead-of-fixme
-
-# 2. Or alternatively, create the branch first then switch
-git branch bug/foo-instead-of-fixme
-git checkout bug/foo-instead-of-fixme
+# 1. Run the following commands in your local clone.
+git fetch origin
+git checkout bug/2-bug-foo-instead-of-fixme
 ```
 
-# 3. Work on your fix while in the virtual environment
+# 2. Work on your fix while in the virtual environment
 
 See [README.md](./100/README.md)
 
-# 4. When done, commit and push:
+# 3. When done, commit and push:
 
 ```
 git add .
 git commit -m "Fix: Change item name from 'foo' to 'fixme'"
-git push origin bug/foo-instead-of-fixme
+git push origin bug/2-bug-foo-instead-of-fixme
 ```
 
 MORE
