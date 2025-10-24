@@ -397,3 +397,16 @@ Fix: Change item name from 'foo' to 'fixme'
 4. Delete the branch after merging (GitHub usually offers this option)
 
 The web interface method is the most user-friendly and gives you a nice visual interface to set up your PR properly!
+
+# 5. Switch back to the main branch
+
+```bash
+# Switch back to the main branch
+git checkout main
+
+# Verify you're on the main branch
+git branch
+
+# Pull any latest changes from remote
+git pull origin main
+```
