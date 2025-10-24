@@ -109,6 +109,13 @@ git branch bug/foo-instead-of-fixme
 git checkout bug/foo-instead-of-fixme
 ```
 
+You should see something like:
+
+```
+branch 'bug/2-bug-foo-instead-of-fixme' set up to track 'origin/bug/2-bug-foo-instead-of-fixme'.
+Switched to a new branch 'bug/2-bug-foo-instead-of-fixme'
+```
+
 # 3. Work on your fix while in the virtual environment
 
 See [README.md](./100/README.md)
