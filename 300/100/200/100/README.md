@@ -1,5 +1,7 @@
 # 100 - Fixing bug "foo instead of fixme"
 
+# 1. Prepare for bug fixing
+
 When we first ran the unit test, we were alerted about below bug.
 
 ```
