@@ -8,14 +8,6 @@ python -m unittest
 
 The first time this will be the outcome:
 
-The test is failing because it expects the item name to be "fixme" but it's actually "foo". This is actually expected behavior for the Gilded Rose Kata!
-
-## What's happening:
-This is a test-driven development kata where:
-- The test is written first (expecting "fixme")
-- The code is supposed to be implemented to make the test pass
-- The current code returns "foo" instead of "fixme"
-
 ```
 F
 ======================================================================
@@ -34,6 +26,14 @@ Ran 1 test in 0.002s
 
 FAILED (failures=1)
 ```
+
+The test is failing because it expects the item name to be "fixme" but it's actually "foo". This is actually expected behavior for the Gilded Rose Kata!
+
+## What's happening:
+This is a test-driven development kata where:
+- The test is written first (expecting "fixme")
+- The code is supposed to be implemented to make the test pass
+- The current code returns "foo" instead of "fixme"
 
 ## Next Steps:
 This is the intended starting point of the kata! You should now:
