@@ -47,4 +47,12 @@ Below we will go through each refactoring/bug fixing exercise.
 
 See [README.md](./100/README.md)
 
+## 200 - Writing unit tests for gilded-rose.py
+
+See [README.md](./200/README.md)
+
+## 300 - Refactoring gilded-rose.py
+
+See [README.md](./300/README.md)
+
 MORE
