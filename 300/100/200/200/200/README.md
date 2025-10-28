@@ -1,5 +1,7 @@
 # 200 - Additional unit tests
 
+First of all, create Unit Tests automatically following the instructions given in [How to test legacy code with characterization tests (JavaScript)](https://www.youtube.com/watch?v=2q5PdGdlL8Y). 
+
 Based on the requirements set by the Gilded Rose Kata we will create a unit test for each of those.
 
 The requirements are:
