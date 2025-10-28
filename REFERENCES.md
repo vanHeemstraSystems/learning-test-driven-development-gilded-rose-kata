@@ -8,3 +8,4 @@
 - [Refactoring Gilded Rose](http://sourcery.ai/blog/refactoring-gilded-rose/)
 - [Refactoring with confidence - because of tests! (Gilded Rose Kata)](https://www.youtube.com/watch?v=wGQPqPorLQ4)
 - [How to test legacy code with characterization tests (JavaScript)](https://www.youtube.com/watch?v=2q5PdGdlL8Y) <== Great about building tests!
+- [The Gilded Rose Kata: Composition over Inheritance](https://dev.to/the-software-s-journey/the-gilded-rose-kata-composition-over-inheritance-537p): My own article ;)
